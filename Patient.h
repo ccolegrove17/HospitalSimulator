@@ -41,7 +41,12 @@ public:
 	}
 
 	bool operator<(const Patient &p1) const{
-		return severity < p1.severity;
+		if (severity < p1.severity)
+			return true;
+		else if (severity == p1.severity)
+			return arrivalTime > p1.arrivalTime;
+		else
+			return false;
 	}
 };
 
