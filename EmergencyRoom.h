@@ -57,7 +57,7 @@ public:
 			std::cout << "\tClock tick: " << clock << std::endl;
 		if (random.nextDouble() < arrivalRate)
 		{
-			Patient p1 = Patient(people[random.nextInt(1999)], clock);
+			Patient p1 = Patient(people[random.nextInt(2000)], clock);
 			if (p1.getSeverity() > 10){
 				if (showText == 1)
 					std::cout << "A severely sick patient has arrived.\n";
@@ -75,10 +75,6 @@ public:
 			if (showText == 1)
 				std::cout << "No new patients arrived.\n";
 		if (!highPatients.empty()){
-			//if (doctors.empty()){
-			//	if (showText == 1)
-			//		std::cout << "There are no doctors to treat the " << highPatients.size() << " severely sick patients." << std::endl;
-			//}
 			while (!doctors.empty()){
 				if (highPatients.empty())
 					break;

@@ -4,10 +4,9 @@
 using namespace std;
 
 extern Random random;
-
+#include <queue>
 int main(){
 	Simulator hospital;
 	hospital.enterData();
 	hospital.runSimulation();
-	//hospital.endMenu();
 }

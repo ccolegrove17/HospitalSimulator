@@ -30,14 +30,14 @@ public:
 		return severity;
 	}
 
-	int RandomSeverity(){//fixed it so that the probability is correct. it was putting in too many lowly sick patients
-		int prob = random.nextInt(9) + 1;
+	int RandomSeverity(){
+		int prob = random.nextInt(10) + 1;
 		if (prob <= 7)
-			return random.nextInt(9) + 1;
+			return random.nextInt(10) + 1;
 		else if (prob <= 9)
-			return random.nextInt(4) + 11;
+			return random.nextInt(5) + 11;
 		else
-			return random.nextInt(4) + 16;
+			return random.nextInt(5) + 16;
 	}
 
 	bool operator<(const Patient &p1) const{

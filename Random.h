@@ -15,7 +15,8 @@ public:
 	}
 
 	int nextInt(int n){
-		return int((nextDouble() * (n-1)) + 1);//returns from zero to n
+		return rand() % n;
+		//return int((nextDouble() * (n)));//returns from zero to n
 	}
 
 	double nextDouble(){

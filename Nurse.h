@@ -18,11 +18,9 @@ public:
 	}
 
 	void treatPatient(int clock){
-		scaledServiceTime = random.nextInt(maxTime);
+		scaledServiceTime = random.nextInt(maxTime) + 1;
 		serviceTime = clock + scaledServiceTime;
 	}
-
-
 };
 
 #endif
