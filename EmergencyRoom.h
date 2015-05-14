@@ -125,11 +125,10 @@ public:
 		while (itN != nurseTreatment.end()){
 			if (clock == (*itN)->serviceTime){
 				nurses.push(*itN);
-				//visitTime += (*itN)->scaledServiceTime;
 				if (showText == 1)
 					std::cout << "The nurse has finished treatment." << std::endl;
 				nurseTreatment.erase(itN);
-				itN = nurseTreatment.begin();//very inefficient workaround. TRY TO FIX
+				itN = nurseTreatment.begin();
 				continue;
 			}
 				itN++;
@@ -139,11 +138,10 @@ public:
 		while (itD != doctorTreatment.end()){
 			if (clock == (*itD)->serviceTime){
 				doctors.push(*itD);
-				//visitTime += (*itD)->scaledServiceTime;
 				if (showText == 1)
 					std::cout << "The doctor has finished treatment." << std::endl;
 				doctorTreatment.erase(itD);
-				itD = doctorTreatment.begin();//very inefficient workaround. TRY TO FIX
+				itD = doctorTreatment.begin();
 				continue;
 			}
 				itD++;

@@ -12,7 +12,7 @@ Random random;
 
 class Simulator{
 private:
-	int doctorNum, nurseNum, arrivalRate, times, total_time;
+	int doctorNum, nurseNum, arrivalRate, times, total_time, lowPatientsSize, highPatientsSize;
 	char choice;
 	EmergencyRoom *emergencyRoom;
 
@@ -49,6 +49,17 @@ public:
 			for (int clock = 0; clock < total_time; clock++){
 				(*emergencyRoom).update(clock);
 			}
+			lowPatientsSize = emergencyRoom->lowPatients.size();
+			highPatientsSize = emergencyRoom->highPatients.size();
+
+			//while (!emergencyRoom->lowPatients.empty()){
+			//	emergencyRoom->visitTime += total_time - emergencyRoom->lowPatients.top().arrivalTime;
+			//	emergencyRoom->lowPatients.pop();
+			//}
+			//while (!emergencyRoom->highPatients.empty()){
+			//	emergencyRoom->visitTime += total_time - emergencyRoom->highPatients.top().arrivalTime;
+			//	emergencyRoom->highPatients.pop();
+			//}
 			endMenu();
 		}
 	}
@@ -76,8 +87,8 @@ public:
 		std::cout << "Total time of simulation: " << total_time << std::endl;
 		std::cout << "Number of patients served by nurses: " << emergencyRoom->nurseServed << std::endl;
 		std::cout << "Number of patients served by doctor: " << emergencyRoom->doctorServed << std::endl;
-		std::cout << "Number of lowly sick patients waiting: " << emergencyRoom->lowPatients.size() << std::endl;
-		std::cout << "Number of severely sick patients waiting: " << emergencyRoom->highPatients.size() << std::endl;
+		std::cout << "Number of lowly sick patients waiting: " << lowPatientsSize << std::endl;
+		std::cout << "Number of severely sick patients waiting: " << highPatientsSize << std::endl;
 		std::cout << "Average visit time: " << static_cast<double>(emergencyRoom->visitTime) / (emergencyRoom->nurseServed + emergencyRoom->doctorServed) << std::endl;
 	}
 

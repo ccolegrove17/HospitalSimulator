@@ -13,8 +13,6 @@ private:
 
 public:
 	int arrivalTime; //when they show up as a sick patient
-	int startServiceTime; //when they begin treatment
-	int endServiceTime; //when they leave the treatment
 
 	Patient(std::string name, int arrivalTime){
 		this->arrivalTime = arrivalTime;
